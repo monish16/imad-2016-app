@@ -43,7 +43,7 @@ function loadCommentForm () {
 }
 
 function addinglike(){
-    $('#likediv').html('<a id="likebutton" href="#">like</a>');
+    $('#likediv').html('<button id="likebutton">like</button>');
     $('#likebutton').on('click',function(e){
         e.preventDefault();
         var arr = { article: currentArticleTitle };
@@ -55,7 +55,7 @@ function addinglike(){
             dataType: 'json',
             async: false,
             success: function(){
-                $('#likediv').html('<a id="likebutton" href="#">liked</a>');
+                $('#likediv').html('<button id="likebutton">liked</button>');
             },
         });
         return false;
