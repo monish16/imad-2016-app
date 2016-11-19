@@ -52,7 +52,6 @@ function addinglike(){
             url: 'http://monish16.imad.hasura-app.io/addlike',
             data: JSON.stringify(arr),
             contentType: 'application/json; charset=utf-8',
-            dataType: 'json',
             async: false,
             success: function(){
                 $('#likediv').html('<button id="likebutton">liked</button>');
