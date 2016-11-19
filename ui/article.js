@@ -50,7 +50,7 @@ function loadLogin () {
             if (request.status === 200) {
                 loadCommentForm(this.responseText);
                 var likebtn = document.getElementById('loginbutton');
-                likebtn.innerHtml = '<a href="">like</a>';
+                likebtn.innerHTML = '<a href="">like</a>';
             }
         }
     };
