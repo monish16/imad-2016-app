@@ -62,6 +62,7 @@ function createTemplate (data) {
                 <center>Loading comments...</center>
               </div>
           </div>
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
           <script type="text/javascript" src="/ui/article.js"></script>
       </body>
     </html>
