@@ -22,7 +22,7 @@ app.use(session({
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
 
-function createTemplate (data) {
+function createTemplate (data,count) {
     var title = data.title;
     var date = data.date;
     var heading = data.heading;
@@ -49,6 +49,7 @@ function createTemplate (data) {
               <div>
                   ${date.toDateString()}
               </div>
+              <div>Likes: ${count}</div>
               <div id="likediv">
               </div>
               <div>
@@ -251,7 +252,10 @@ app.get('/articles/:articleName', function (req, res) {
             res.status(404).send('Article not found');
         } else {
             var articleData = result.rows[0];
-            res.send(createTemplate(articleData));
+            pool.query("SELECT COUNT(*) FROM article_likes WHERE article_id=$1", [articleData.id], function (err, result) {
+                
+            });
+            res.send(createTemplate(articleData,count));
         }
     }
   });
