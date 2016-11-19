@@ -104,7 +104,7 @@ app.post('/create-user', function (req, res) {
    });
 });
 
-app.post('/addlike',function(req,res){
+app.get('/addlike',function(req,res){
 var article = req.body.article_id;
    var author = req.body.author_id;
     pool.query('INSERT INTO "likes" ("article_id","user_id") VALUES ($1,$2)', [article],[author], function (err, result) {
