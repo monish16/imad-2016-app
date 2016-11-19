@@ -49,7 +49,7 @@ function loadLogin () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 loadCommentForm(this.responseText);
-                var likebtn = document.getElementById('loginbutton');
+                var likebtn = document.getElementById('likebutton');
                 likebtn.innerHTML = '<a href="">like</a>';
             }
         }
