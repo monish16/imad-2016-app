@@ -54,10 +54,10 @@ function addinglike(){
             contentType: 'application/json; charset=utf-8',
             async: false,
             success: function(){
-                $('#likediv').html('<button id="likebutton">liked</button>');
+               $('#likebutton').val('Liked');
             },
             error: function(){
-                $('#likebutton').val('Liked');
+                $('#likebutton').val('failed. Try Again!');
             },
         });
         return false;
