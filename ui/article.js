@@ -42,17 +42,18 @@ function loadCommentForm () {
     };
 }
 
-$(function(){
+function addinglike(author,article){
+    $('#likebutton').html('<a href="javascript:void(0)">like</a>');
     $('#likebutton').on('click',function(){
         $.ajax({
             url: '/addlike',
-            data: id
+            data: "article_id=" + currentArticleTitle,
             success: function(){
                 $('#likebutton').html('<a href="javascript:void(0)">liked</a>')
-            }
+            },
         });
     });
-});
+};
 
 function loadLogin () {
     // Check if the user is already logged in
@@ -61,8 +62,7 @@ function loadLogin () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 loadCommentForm(this.responseText);
-                var likebtn = document.getElementById('likebutton');
-                likebtn.innerHTML = '<a href="javascript:void(0)">like</a>';
+                likingbutton();
             }
         }
     };
@@ -73,8 +73,7 @@ function loadLogin () {
 
 
 
-function escapeHTML (text)
-{
+function escapeHTML (text){
     var $text = document.createTextNode(text);
     var $div = document.createElement('div');
     $div.appendChild($text);
