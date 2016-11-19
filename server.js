@@ -49,7 +49,7 @@ function createTemplate (data) {
               <div>
                   ${date.toDateString()}
               </div>
-              <div id="likebutton">
+              <div id="likediv">
               </div>
               <div>
                 ${content}
