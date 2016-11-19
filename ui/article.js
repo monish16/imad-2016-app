@@ -45,14 +45,18 @@ function loadCommentForm () {
 function addinglike(author,article){
     $('#likebutton').html('<a href="javascript:void(0)">like</a>');
     $('#likebutton').on('click',function(){
+        var arr = { article: currentArticleTitle };
         $.ajax({
             url: '/addlike',
-            data: "article_id=" + currentArticleTitle,
-            dataType: "json",
+            data: JSON.stringify(arr),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            async: false,
             success: function(){
-                $('#likebutton').html('<a href="javascript:void(0)">liked</a>')
+                $('#likebutton').html('<a href="javascript:void(0)">liked</a>');
             },
         });
+
     });
 }
 
