@@ -57,6 +57,9 @@ function addinglike(){
             success: function(){
                 $('#likediv').html('<button id="likebutton">liked</button>');
             },
+            error: function(){
+                $('#likediv').html('<button id="likebutton">failed</button>');
+            },
         });
         return false;
     });
