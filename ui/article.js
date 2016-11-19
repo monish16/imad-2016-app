@@ -49,7 +49,7 @@ function addinglike(){
         var arr = { article: currentArticleTitle };
         $.ajax({
             type: 'POST',
-            url: 'http://monish16.imad.hasura-app.io//addlike',
+            url: 'http://monish16.imad.hasura-app.io/addlike',
             data: JSON.stringify(arr),
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
