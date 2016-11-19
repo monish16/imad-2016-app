@@ -57,7 +57,7 @@ function addinglike(){
                 $('#likediv').html('<button id="likebutton">liked</button>');
             },
             error: function(){
-                $('#likediv').html('<button id="likebutton">failed</button>');
+                $('#likebutton').val('Liked');
             },
         });
         return false;
