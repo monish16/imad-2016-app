@@ -42,6 +42,18 @@ function loadCommentForm () {
     };
 }
 
+$(function(){
+    $('#likebutton').on('click',function(){
+        $.ajax({
+            url: '/addlike',
+            data: id
+            success: function(){
+                $('#likebutton').html('<a href="javascript:void(0)">liked</a>')
+            }
+        });
+    });
+});
+
 function loadLogin () {
     // Check if the user is already logged in
     var request = new XMLHttpRequest();
@@ -50,7 +62,7 @@ function loadLogin () {
             if (request.status === 200) {
                 loadCommentForm(this.responseText);
                 var likebtn = document.getElementById('likebutton');
-                likebtn.innerHTML = '<a href="">like</a>';
+                likebtn.innerHTML = '<a href="javascript:void(0)">like</a>';
             }
         }
     };
