@@ -117,7 +117,7 @@ app.post('/addlike',function(req,res){
                 } else {
                     var articleId = result.rows[0].id;
                     // Now insert the right comment for this article
-                    pool.query('INSERT INTO "likes" ("article_id","user_id") VALUES ($1,$2)', [articleId,author],
+                    pool.query('INSERT INTO likes ("article_id","user_id") VALUES ($1,$2)', [articleId,author],
                         function (err, result) {
                             if (err) {
                                 res.send('hi');
