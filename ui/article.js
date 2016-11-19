@@ -44,7 +44,7 @@ function loadCommentForm () {
 
 function addinglike(author,article){
     $('#likebutton').html('<a href="javascript:void(0)">like</a>');
-    $('#likebutton').on('click',function(){
+    $('#likebutton a').on('click',function(){
         var arr = { article: currentArticleTitle };
         $.ajax({
             url: '/addlike',
@@ -67,7 +67,7 @@ function loadLogin () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 loadCommentForm(this.responseText);
-                likingbutton();
+                addinglike();
             }
         }
     };
