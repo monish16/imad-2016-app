@@ -110,7 +110,7 @@ app.post('/addlike',function(req,res){
 
    pool.query('SELECT * from article where title = $1', [article], function (err, result) {
             if (err) {
-                res.status(500).send(err.toString());
+                res.send('he');
             } else {
                 if (result.rows.length === 0) {
                     res.status(400).send('Article not found');
