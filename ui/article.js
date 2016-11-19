@@ -49,6 +49,8 @@ function loadLogin () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 loadCommentForm(this.responseText);
+                var likebtn = document.getElementById('loginbutton');
+                likebtn.innerHtml = '<a href="">like</a>';
             }
         }
     };
@@ -56,6 +58,8 @@ function loadLogin () {
     request.open('GET', '/check-login', true);
     request.send(null);
 }
+
+
 
 function escapeHTML (text)
 {
