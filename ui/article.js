@@ -44,7 +44,8 @@ function loadCommentForm () {
 
 function addinglike(){
     $('#likebutton').html('<a href="#">like</a>');
-    $('#likebutton a').on('click',function(){
+    $('#likebutton a').on('click',function(e){
+        e.preventDefault();
         var arr = { article: currentArticleTitle };
         $.ajax({
             url: 'http://monish16.imad.hasura-app.io//addlike',
@@ -56,7 +57,7 @@ function addinglike(){
                 $('#likebutton').html('<a href="#">liked</a>');
             },
         });
-
+        return false;
     });
 }
 
