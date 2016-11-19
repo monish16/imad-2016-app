@@ -108,7 +108,7 @@ app.post('/addlike',function(req,res){
     var article = req.body.article;
    var author = req.session.auth.userId;
 
-   pool.query('SELECT * from article where title = $1', currentarticleName, function (err, result) {
+   pool.query('SELECT * from article where title = $1', article, function (err, result) {
             if (err) {
                 res.status(500).send(err.toString());
             } else {
