@@ -43,8 +43,8 @@ function loadCommentForm () {
 }
 
 function addinglike(){
-    $('#likebutton').html('<a href="#">like</a>');
-    $('#likebutton a').on('click',function(e){
+    $('#likediv').html('<a id="likebutton" href="#">like</a>');
+    $('#likebutton').on('click',function(e){
         e.preventDefault();
         var arr = { article: currentArticleTitle };
         $.ajax({
@@ -54,7 +54,7 @@ function addinglike(){
             dataType: 'json',
             async: false,
             success: function(){
-                $('#likebutton').html('<a href="#">liked</a>');
+                $('#likediv').html('<a id="likebutton" href="#">liked</a>');
             },
         });
         return false;
