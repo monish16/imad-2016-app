@@ -120,7 +120,7 @@ app.post('/addlike',function(req,res){
                     pool.query('INSERT INTO "likes" ("article_id","user_id") VALUES ($1,$2)', [articleId,author],
                         function (err, result) {
                             if (err) {
-                                res.status(500).send(err.toString());
+                                res.send('hi');
                             } else {
                                 res.status(200).send('Liked');
                             }
