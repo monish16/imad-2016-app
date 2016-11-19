@@ -48,12 +48,13 @@ function addinglike(author,article){
         $.ajax({
             url: '/addlike',
             data: "article_id=" + currentArticleTitle,
+            dataType: "json",
             success: function(){
                 $('#likebutton').html('<a href="javascript:void(0)">liked</a>')
             },
         });
     });
-};
+}
 
 function loadLogin () {
     // Check if the user is already logged in
