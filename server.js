@@ -50,6 +50,9 @@ function createTemplate (data) {
                   ${date.toDateString()}
               </div>
               <div>
+              <a href="javascript:void(0);">Like</a>
+              </div>
+              <div>
                 ${content}
               </div>
               <hr/>
