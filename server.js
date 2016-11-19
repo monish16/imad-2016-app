@@ -105,15 +105,29 @@ app.post('/create-user', function (req, res) {
 });
 
 app.post('/addlike',function(req,res){
-var article = req.body.article_id;
-   var author = req.body.author_id;
-    pool.query('INSERT INTO "likes" ("article_id","user_id") VALUES ($1,$2)', [article],[author], function (err, result) {
-         if (err) {
-            res.status(500).send(err.toString());
-        } else {
-            res.status(200).send('Liked!');
-        }
-    });
+    var article = req.body.article;
+   var author = req.session.auth.userId;
+
+   pool.query('SELECT * from article where title = $1', currentarticleName, function (err, result) {
+            if (err) {
+                res.status(500).send(err.toString());
+            } else {
+                if (result.rows.length === 0) {
+                    res.status(400).send('Article not found');
+                } else {
+                    var articleId = result.rows[0].id;
+                    // Now insert the right comment for this article
+                    pool.query('INSERT INTO "likes" ("article_id","user_id") VALUES ($1,$2)', [articleId,author],
+                        function (err, result) {
+                            if (err) {
+                                res.status(500).send(err.toString());
+                            } else {
+                                res.status(200).send('Liked');
+                            }
+                        });
+                }
+            }
+   });
 });
 
 
