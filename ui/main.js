@@ -71,7 +71,6 @@ function loadLoginForm () {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-        var link= document.getElementById('link').value;
         console.log(username);
         console.log(password);
         request.open('POST', '/create-user', true);
