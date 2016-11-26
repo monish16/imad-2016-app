@@ -87,6 +87,7 @@ function loadLoginForm () {
 }
 
 function loadLoggedInUser (userin) {
+    alert(userin);
     var user = JSON.parse(userin);
     var temp=user.username;
     var ilink=user.link;
