@@ -94,7 +94,7 @@ function loadLoggedInUser (userin) {
     var ilink=user.link;
     var loginArea = document.getElementById('login_area');
     loginArea.innerHTML = `
-        <h3> Hi <i>${temp}</i></h3><img src="$(ilink)"/>
+        <h3> Hi <i>${temp}</i></h3><img src="${ilink}"/>
         <a href="/logout">Logout</a>
     `;
 }
