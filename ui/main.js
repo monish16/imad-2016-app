@@ -86,9 +86,9 @@ function loadLoginForm () {
     };
 }
 
-function loadLoggedInUser (user) {
+function loadLoggedInUser (userin) {
+    var user = JSON.parse(userin);
     var temp=user.username;
-    var user = JSON.parse(user);
     var ilink=user.link;
     var loginArea = document.getElementById('login_area');
     loginArea.innerHTML = `
