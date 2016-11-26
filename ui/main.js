@@ -3,6 +3,7 @@ function loadLoginForm () {
     var loginHtml = `
         <h3>Login/Register<h6>(Login/register to add articles)</h6></h3>
         <input type="text" id="username" placeholder="username" />
+        <input type="text" id="link" placeholder="URL" />
         <input type="password" id="password" />
         <br/><br/>
         <input type="submit" id="login_btn" value="Login" />
@@ -40,11 +41,13 @@ function loadLoginForm () {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
+        var link = document.getElementById('link').value;
         console.log(username);
         console.log(password);
+        console.log(link);
         request.open('POST', '/login', true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({username: username, password: password}));  
+        request.send(JSON.stringify({username: username, password: password, link: link}));  
         submit.value = 'Logging in...';
         
     };
@@ -71,11 +74,13 @@ function loadLoginForm () {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
+        var link = document.getElementById('link').value;
         console.log(username);
         console.log(password);
+        console.log(link);
         request.open('POST', '/create-user', true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({username: username, password: password}));  
+        request.send(JSON.stringify({username: username, password: password, link: link}));  
         register.value = 'Registering...';
     
     };
