@@ -1,12 +1,14 @@
 
 function loadLoginForm () {
     var loginHtml = `
-        <h3>Login/Register to unlock awesome features</h3>
+        <h3>Login/Register</h3>
         <input type="text" id="username" placeholder="username" />
+        <input type="text" id="link" placeholder="url of twitter profile picture" />
         <input type="password" id="password" />
         <br/><br/>
         <input type="submit" id="login_btn" value="Login" />
         <input type="submit" id="register_btn" value="Register" />
+        
         `;
     document.getElementById('login_area').innerHTML = loginHtml;
     
@@ -39,8 +41,10 @@ function loadLoginForm () {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
+        var link = document.getElementById('link').value;
         console.log(username);
         console.log(password);
+        console.log(link);
         request.open('POST', '/login', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
@@ -70,11 +74,13 @@ function loadLoginForm () {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
+        var link= document.getElementById('link').value;
         console.log(username);
         console.log(password);
+        console.log(link);
         request.open('POST', '/create-user', true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({username: username, password: password}));  
+        request.send(JSON.stringify({username: username, password: password,link: link}));  
         register.value = 'Registering...';
     
     };
