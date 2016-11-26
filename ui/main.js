@@ -1,7 +1,7 @@
 
 function loadLoginForm () {
     var loginHtml = `
-        <h3>Login/Register</h3><h6>(Login/register to add articles)</h6>
+        <h3>Login/Register<h6>(Login/register to add articles)</h6></h3>
         <input type="text" id="username" placeholder="username" />
         <input type="password" id="password" />
         <br/><br/>
