@@ -3,7 +3,7 @@ function loadLoginForm () {
     var loginHtml = `
         <h3>Login/Register<h6>(Login/register to add articles)</h6></h3>
         <input type="text" id="username" placeholder="username" />
-        <input type="text" id="link" placeholder="URL" />
+        <input type="text" id="link" placeholder="Enter your image URL" />
         <input type="password" id="password" />
         <br/><br/>
         <input type="submit" id="login_btn" value="Login" />
