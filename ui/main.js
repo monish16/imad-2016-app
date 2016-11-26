@@ -88,6 +88,7 @@ function loadLoginForm () {
 
 function loadLoggedInUser (user) {
     var temp=user.username;
+    var user = JSON.parse(user);
     var ilink=user.link;
     var loginArea = document.getElementById('login_area');
     loginArea.innerHTML = `
